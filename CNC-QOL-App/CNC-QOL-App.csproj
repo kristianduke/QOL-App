@@ -8,15 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="multiply_124px.png" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Folder Include="Resources\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Resource Include="multiply_124px.png" />
   </ItemGroup>
 
 </Project>

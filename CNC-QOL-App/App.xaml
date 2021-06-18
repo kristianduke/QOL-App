@@ -18,5 +18,15 @@
                 </Setter.Value>
             </Setter>
         </Style>
+
+        <Style x:Key="ListRoundButtonTemplate" TargetType="Button">
+            <Setter Property="Background" Value="DodgerBlue"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <Rectangle></Rectangle>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </Application.Resources>
 </Application>

@@ -7,4 +7,18 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Resources\outline_expand_less_white_48dp.png" />
+    <None Remove="Resources\outline_expand_more_white_48dp.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\outline_expand_less_white_48dp.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\outline_expand_more_white_48dp.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
 </Project>

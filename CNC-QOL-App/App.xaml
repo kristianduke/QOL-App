@@ -138,7 +138,7 @@
                             </Trigger>
                             <Trigger Property="IsPressed" Value="true">
                                 <Setter Property="Background" TargetName="border" Value="#FF303030"/>
-                                <Setter Property="BorderBrush" TargetName="border" Value="#FF303030t"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="#FF303030"/>
                             </Trigger>
                             <Trigger Property="IsEnabled" Value="false">
                                 <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background1}"/>

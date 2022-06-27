@@ -1,4 +1,4 @@
-Required Features:
+Required Features: [In order of Importance]
 
 Window Seperations, I.E. Being able to seperate notepad from main window.
 
@@ -8,8 +8,12 @@ Notepad Saving, Ability to Save notepad text as txt file.
 
 Notepad Formatting, Allow for bullet points, bold, italic, etc.
 
-Macros?
+Settings Menu + Saving to Application Settings
 
 Multi Clipboard
+
+Ability to Run Python Scripts from Folder (Existing Python Install Location can be added in settings menu.)
+
+Macros?
 
 Google Drive Integration

@@ -42,16 +42,15 @@ namespace CNC_QOL_App
             maxMinWindowHover_btn_brsh = new SolidColorBrush(Color.FromArgb(255, 203, 137, 59));
             minimiseWindowHover_btn_brsh = new SolidColorBrush(Color.FromArgb(255, 100, 162, 77));
 
-            var testTab = new NavigationPanelTab();
-            var testItem = new NavigationTabItemStruct("Notepad", new NotepadTab());
-            var testItem1 = new NavigationTabItemStruct("Notifications", null);
-            var testItem2 = new NavigationTabItemStruct("Alarms", null);
-            testTab.Items = new List<NavigationTabItemStruct> { testItem, testItem1, testItem2 };
-            testTab.Title = "Favourites";
+            var mainTab = new NavigationPanelTab();
+            var notepadTab = new NavigationTabItemStruct("Notepad", new NotepadTab());
+            var genericTab = new NavigationTabItemStruct("Test", new GenericTab());
+            mainTab.Items = new List<NavigationTabItemStruct> { notepadTab, genericTab };
+            mainTab.Title = "Favourites";
 
-            NavigationPanel.Children.Add(testTab);
+            NavigationPanel.Children.Add(mainTab);
 
-            testTab.UpdateItems();
+            mainTab.UpdateItems();
         }
 
         private void GripBar_MouseDown(object sender, MouseButtonEventArgs e)

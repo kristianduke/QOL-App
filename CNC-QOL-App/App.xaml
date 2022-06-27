@@ -54,7 +54,7 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate>
-                        <Border CornerRadius="20" Background="{TemplateBinding Background}" BorderThickness="1">
+                        <Border CornerRadius="5" Background="{TemplateBinding Background}" BorderThickness="1">
                             <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" OpacityMask="{x:Null}">
                             </ContentPresenter>
                         </Border>

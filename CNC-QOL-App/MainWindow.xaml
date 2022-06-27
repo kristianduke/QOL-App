@@ -11,7 +11,7 @@
             <Border x:Name="titleBar_bdr" CornerRadius="7,7,0,0" Height="24" VerticalAlignment="Top" Background="#FF474747" MouseDown="GripBar_MouseDown">
                 <Grid>
                     <Button x:Name="closeWindow_btn" Style="{StaticResource RoundButtonTemplate}" Width="15" Height="15" Background="#FFF75252" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,3,0" 
-                            Click="CloseWindow_btn_Click" MouseEnter="CloseWindow_btn_Hover_Enter" MouseLeave="CloseWindow_btn_Hover_Leave"/>
+                            Click="CloseWindow_btn_Click" MouseEnter="CloseWindow_btn_Hover_Enter" MouseLeave="CloseWindow_btn_Hover_Leave" FontSize="5" FontWeight="Normal" FontFamily="Arial"/>
                     <Button x:Name="maxMinWindow_btn" Style="{StaticResource RoundButtonTemplate}" Width="15" Height="15" Background="#FFF7AC52" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,21,0" 
                             Click="MaxMinWindow_btn_Click" MouseEnter="MaxMinWindow_btn_Hover_Enter" MouseLeave="MaxMinWindow_btn_Hover_Leave"/>
                     <Button x:Name="minimiseWindow_btn" Style="{StaticResource RoundButtonTemplate}" Width="15" Height="15" Background="#FF8DCB76" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,39,0" 

@@ -59,8 +59,13 @@ namespace CNC_QOL_App
             {
                 Point point = Mouse.GetPosition(this);
                 Point screenPoint = PointToScreen(point);
-                this.Top = screenPoint.Y - 10;
-                this.Left = screenPoint.X - (this.Width / 2);
+
+                if (this.WindowState == WindowState.Maximized) // Prevents Window Being Seperated From Cursor when Unmaximized if Grabbed.
+                {
+                    this.Top = screenPoint.Y - 10;
+                    this.Left = screenPoint.X - (this.Width / 2);
+                }
+
                 this.WindowState = WindowState.Normal;
                 this.DragMove();
             }

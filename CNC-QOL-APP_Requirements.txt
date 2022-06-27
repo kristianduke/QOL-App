@@ -12,3 +12,4 @@ Macros?
 
 Multi Clipboard
 
+Google Drive Integration

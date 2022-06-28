@@ -10,15 +10,14 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace CNC_QOL_App
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for SeperatedWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class SeperatedWindow : Window
     {
         #region --- VARIABLES ---
 
@@ -35,8 +34,7 @@ namespace CNC_QOL_App
 
         #endregion
 
-
-        public MainWindow()
+        public SeperatedWindow()
         {
             InitializeComponent();
 
@@ -49,16 +47,6 @@ namespace CNC_QOL_App
             closeWindowHover_btn_brsh = new SolidColorBrush(Color.FromArgb(255, 224, 66, 66));
             maxMinWindowHover_btn_brsh = new SolidColorBrush(Color.FromArgb(255, 203, 137, 59));
             minimiseWindowHover_btn_brsh = new SolidColorBrush(Color.FromArgb(255, 100, 162, 77));
-
-            var mainTab = new NavigationPanelTab();
-            var notepadTab = new NavigationTabItemStruct("Notepad", new NotepadTab());
-            var genericTab = new NavigationTabItemStruct("Test", new GenericTab());
-            mainTab.Items = new List<NavigationTabItemStruct> { notepadTab, genericTab };
-            mainTab.Title = "Favourites";
-
-            NavigationPanel.Children.Add(mainTab);
-
-            mainTab.UpdateItems();
         }
 
         #region --- INTERACTION EVENTS ---
@@ -67,7 +55,7 @@ namespace CNC_QOL_App
 
         private void GripBar_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            if(e.ChangedButton == MouseButton.Left)
+            if (e.ChangedButton == MouseButton.Left)
             {
                 Point point = Mouse.GetPosition(this);
                 Point screenPoint = PointToScreen(point);
@@ -102,10 +90,11 @@ namespace CNC_QOL_App
 
         private void MaxMinWindow_btn_Click(object sender, RoutedEventArgs e)
         {
-            if(this.WindowState != WindowState.Maximized)
+            if (this.WindowState != WindowState.Maximized)
             {
                 this.WindowState = WindowState.Maximized;
-            } else
+            }
+            else
             {
                 this.WindowState = WindowState.Normal;
             }
@@ -138,16 +127,17 @@ namespace CNC_QOL_App
         #endregion
 
         public void Window_SizeChanged(object sender, SizeChangedEventArgs e)
-        {  
-            if(this.WindowState == WindowState.Maximized)
+        {
+            if (this.WindowState == WindowState.Maximized)
             {
                 this.BorderThickness = new System.Windows.Thickness(6);
-                titleBar_bdr.CornerRadius = new CornerRadius(0, 0, 
+                titleBar_bdr.CornerRadius = new CornerRadius(0, 0,
                     titleBar_bdr.CornerRadius.BottomRight, titleBar_bdr.CornerRadius.BottomLeft);
-            } else
+            }
+            else
             {
                 this.BorderThickness = new System.Windows.Thickness(0);
-                titleBar_bdr.CornerRadius = new CornerRadius(7, 7, 
+                titleBar_bdr.CornerRadius = new CornerRadius(7, 7,
                     titleBar_bdr.CornerRadius.BottomRight, titleBar_bdr.CornerRadius.BottomLeft);
             }
         }

@@ -48,15 +48,16 @@
                 </MultiTrigger>
             </Style.Triggers>
         </Style>
-        <Style x:Key="RoundButtonTemplate" TargetType="Button">
+        <Style x:Key="RoundButtonTemplate" TargetType="{x:Type Button}">
             <Setter Property="Background" Value="DodgerBlue"/>
             <Setter Property="Foreground" Value="White"/>
             <Setter Property="Template">
                 <Setter.Value>
-                    <ControlTemplate>
-                        <Border CornerRadius="5" Background="{TemplateBinding Background}" BorderThickness="1">
-                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" OpacityMask="{x:Null}">
-                            </ContentPresenter>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border CornerRadius="5" Background="{TemplateBinding Background}"  BorderThickness="1">
+                            <Grid>
+                                <ContentPresenter x:Name="MyContentPresenter" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Grid>
                         </Border>
                     </ControlTemplate>
                 </Setter.Value>

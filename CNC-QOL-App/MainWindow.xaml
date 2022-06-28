@@ -11,11 +11,15 @@
             <Border x:Name="titleBar_bdr" CornerRadius="7,7,0,0" Height="24" VerticalAlignment="Top" Background="#FF474747" MouseDown="GripBar_MouseDown">
                 <Grid>
                     <Button x:Name="closeWindow_btn" Style="{StaticResource RoundButtonTemplate}" Width="15" Height="15" Background="#FFF75252" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,3,0" 
-                            Click="CloseWindow_btn_Click" MouseEnter="CloseWindow_btn_Hover_Enter" MouseLeave="CloseWindow_btn_Hover_Leave" FontSize="5" FontWeight="Normal" FontFamily="Arial"/>
+                            Click="CloseWindow_btn_Click" MouseEnter="CloseWindow_btn_Hover_Enter" MouseLeave="CloseWindow_btn_Hover_Leave" FontSize="5" FontWeight="Normal" FontFamily="Arial" IsTabStop="False">
+                        <Image Source="/Resources/multiply_124px.png" Stretch="Fill" MinWidth="4" MinHeight="5" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="2,2,2,2"/>
+                    </Button>
                     <Button x:Name="maxMinWindow_btn" Style="{StaticResource RoundButtonTemplate}" Width="15" Height="15" Background="#FFF7AC52" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,21,0" 
-                            Click="MaxMinWindow_btn_Click" MouseEnter="MaxMinWindow_btn_Hover_Enter" MouseLeave="MaxMinWindow_btn_Hover_Leave"/>
-                    <Button x:Name="minimiseWindow_btn" Style="{StaticResource RoundButtonTemplate}" Width="15" Height="15" Background="#FF8DCB76" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,39,0" 
-                            Click="MinimiseWindow_btn_Click" MouseEnter="MinimiseWindow_btn_Hover_Enter" MouseLeave="MinimiseWindow_btn_Hover_Leave"/>
+                            Click="MaxMinWindow_btn_Click" MouseEnter="MaxMinWindow_btn_Hover_Enter" MouseLeave="MaxMinWindow_btn_Hover_Leave" IsTabStop="False"/>
+                    <Button x:Name="minimiseWindow_btn" Style="{StaticResource RoundButtonTemplate}" Width="15" Height="15" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,39,0" 
+                            Click="MinimiseWindow_btn_Click" MouseEnter="MinimiseWindow_btn_Hover_Enter" MouseLeave="MinimiseWindow_btn_Hover_Leave" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" IsTabStop="False" MinWidth="15" MinHeight="15" Background="#FF29B738">
+                        <Image Source="/Resources/subtract_124px.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="1,0,1,0"/>
+                    </Button>
                 </Grid>
             </Border>
             <Grid Margin="0,24,0,0">
@@ -30,7 +34,7 @@
                 <Grid>
                     <Border Grid.Column="0" Grid.Row="0" Background="#FF383838" CornerRadius="5" Margin="5,5,5,5" VerticalAlignment="Top">
                         <StackPanel Name="NavigationPanel" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Disabled" VerticalAlignment="Top">
-                            
+
                         </StackPanel>
                     </Border>
                 </Grid>

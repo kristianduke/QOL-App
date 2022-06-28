@@ -8,8 +8,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\multiply_124px.png" />
     <None Remove="Resources\outline_expand_less_white_48dp.png" />
     <None Remove="Resources\outline_expand_more_white_48dp.png" />
+    <None Remove="Resources\subtract_124px.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Resources\multiply_124px.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>
@@ -17,6 +25,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Resources\outline_expand_more_white_48dp.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\subtract_124px.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>

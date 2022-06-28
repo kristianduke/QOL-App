@@ -44,8 +44,8 @@ namespace CNC_QOL_App
 
             if (!mainTab.Children.Contains(linkedControl) && linkedControl != null)
             {
-                Grid.SetColumnSpan(linkedControl, 2);
-                Grid.SetRowSpan(linkedControl, 2);
+                Grid.SetColumnSpan(linkedControl, 3);
+                Grid.SetRowSpan(linkedControl, 3);
 
                 mainTab.Children.Add(linkedControl);
             } else if(linkedControl != null)

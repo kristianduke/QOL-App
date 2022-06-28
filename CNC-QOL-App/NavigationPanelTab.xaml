@@ -17,8 +17,8 @@
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="30"/>
         </Grid.ColumnDefinitions>
-        <Label Content="{Binding Title, ElementName=navigationTabWindow}" Grid.Row="0" Foreground="White" MinHeight="20" VerticalContentAlignment="Center" FontFamily="Bahnschrift Light" FontSize="18" Padding="10,5,5,5"/>
-        <Image Grid.Column="1" Height="Auto" Width="Auto" Source="/Resources/outline_expand_more_white_48dp.png" Cursor="Hand"/>
+        <Label Content="{Binding Title, ElementName=navigationTabWindow}" Grid.Row="0" Foreground="White" MinHeight="20" VerticalContentAlignment="Center" Cursor="Hand" FontFamily="Bahnschrift Light" FontSize="18" Padding="10,5,5,5" MouseLeftButtonDown="navigationTab_MouseDown"/>
+        <Image x:Name="navigationTabIcon" Grid.Column="1" Height="Auto" Width="Auto" Source="/Resources/outline_expand_more_white_48dp.png" Cursor="Hand" RenderTransformOrigin="0.5,0.625" MouseLeftButtonDown="navigationTab_MouseDown"/>
         <StackPanel Name="itemStack" Grid.Row="1" Grid.ColumnSpan="2">
         </StackPanel>
     </Grid>

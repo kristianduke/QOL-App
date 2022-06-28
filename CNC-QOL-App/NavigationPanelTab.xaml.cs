@@ -26,6 +26,10 @@ namespace CNC_QOL_App
             set { SetValue(TitleProperty, value); }
         }
 
+        public bool active = true;
+
+        private Image navigationImage;
+
         // Using a DependencyProperty as the backing store for Title.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty TitleProperty =
             DependencyProperty.Register("Title", typeof(string), typeof(NavigationPanelTab), new PropertyMetadata("Title_Placeholder"));
@@ -36,6 +40,7 @@ namespace CNC_QOL_App
         {
             InitializeComponent();
             this.DataContext = this;
+            navigationImage = (Image)this.FindName("navigationTabIcon");
         }
 
         public void UpdateItems()
@@ -46,6 +51,31 @@ namespace CNC_QOL_App
                 tempItem.Title = item.name;
                 itemStack.Children.Add(tempItem);
                 tempItem.linkedControl = item.control;
+            }
+        }
+
+        public void CloseTab()
+        {
+            itemStack.Children.Clear();
+            navigationImage.Source = new BitmapImage(new Uri("Resources/outline_expand_more_white_48dp.png", UriKind.Relative));
+            active = false;
+        }
+
+        public void OpenTab()
+        {
+            UpdateItems();
+            navigationImage.Source = new BitmapImage(new Uri("Resources/outline_expand_less_white_48dp.png", UriKind.Relative));
+            active = true;
+        }
+
+        private void navigationTab_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (active)
+            {
+                CloseTab();
+            } else
+            {
+                OpenTab();
             }
         }
     }

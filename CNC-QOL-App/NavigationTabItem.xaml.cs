@@ -40,19 +40,30 @@ namespace CNC_QOL_App
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Grid mainTab = (Grid)Application.Current.MainWindow.FindName("TabGrid");
+            if(linkedControl.Parent != null && linkedControl.Parent != this)
+            {
+                foreach(WindowFrame window in InstanceData.SeperatedWindows)
+                {
+                    if(window.GetTab() == linkedControl)
+                    {
+                        window.DestroyWindow();
+                    }
+                }
+            }
 
-            if (!mainTab.Children.Contains(linkedControl) && linkedControl != null)
+            Grid tabGrid = InstanceData.MainTab.GetTabGrid();
+
+            if (!tabGrid.Children.Contains(linkedControl) && linkedControl != null)
             {
                 Grid.SetColumnSpan(linkedControl, 3);
                 Grid.SetRowSpan(linkedControl, 3);
 
-                mainTab.Children.Add(linkedControl);
+                tabGrid.Children.Add(linkedControl);
             } else if(linkedControl != null)
             {
                 Grid.SetColumnSpan(linkedControl, 1);
                 Grid.SetRowSpan(linkedControl, 1);
-                mainTab.Children.Remove(linkedControl);
+                tabGrid.Children.Remove(linkedControl);
             }
         }
     }

@@ -14,6 +14,7 @@
             </Grid.RowDefinitions>
             <TextBox Grid.Row="1" Style="{DynamicResource NotepadTextBoxStyle}" TextWrapping="Wrap" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" SelectionBrush="#FF8B6FAE" Margin="10,0,10,10" FontFamily="Bahnschrift" FontSize="14" AcceptsReturn="True" AcceptsTab="True" Padding="5,5,0,5"/>
             <Label Content="Notepad" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White" FontFamily="Bahnschrift" FontSize="18" Margin="10,0,0,0"/>
+            <Button x:Name="DetachWindow_btn" Style="{StaticResource RoundButtonTemplate}" Width="30" Height="30" Background="#FF679BE2" HorizontalAlignment="Right" VerticalAlignment="Center"  MouseEnter="DetachWindow_btn_Hover_Enter" MouseLeave="DetachWindow_btn_Hover_Leave" FontSize="5" FontWeight="Normal" FontFamily="Arial" IsTabStop="False" Click="DetachWindow_btn_Click" Margin="0,0,12,0"/>
         </Grid>
     </Border>
 </UserControl>

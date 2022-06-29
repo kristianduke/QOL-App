@@ -10,15 +10,14 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace CNC_QOL_App
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for SeperatedWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class WindowFrame : Window
     {
         #region --- VARIABLES ---
 
@@ -30,13 +29,14 @@ namespace CNC_QOL_App
         public Brush maxMinWindowHover_btn_brsh;
         public Brush minimiseWindow_btn_brsh;
         public Brush minimiseWindowHover_btn_brsh;
+        public Brush pinWindow_btn_brsh;
+        public Brush pinWindowHover_btn_brsh;
 
         #endregion
 
         #endregion
 
-
-        public MainWindow()
+        public WindowFrame()
         {
             InitializeComponent();
 
@@ -44,21 +44,45 @@ namespace CNC_QOL_App
             closeWindow_btn_brsh = closeWindow_btn.Background;
             maxMinWindow_btn_brsh = maxMinWindow_btn.Background;
             minimiseWindow_btn_brsh = minimiseWindow_btn.Background;
+            pinWindow_btn_brsh = pinWindow_btn.Background;
 
             //Set Colour/Brush Variables for Title Bar Hover
             closeWindowHover_btn_brsh = new SolidColorBrush(Color.FromArgb(255, 224, 66, 66));
             maxMinWindowHover_btn_brsh = new SolidColorBrush(Color.FromArgb(255, 203, 137, 59));
             minimiseWindowHover_btn_brsh = new SolidColorBrush(Color.FromArgb(255, 100, 162, 77));
+            pinWindowHover_btn_brsh = new SolidColorBrush(Color.FromArgb(255, 164, 66, 187));
+        }
 
-            var mainTab = new NavigationPanelTab();
-            var notepadTab = new NavigationTabItemStruct("Notepad", new NotepadTab());
-            var genericTab = new NavigationTabItemStruct("Test", new GenericTab());
-            mainTab.Items = new List<NavigationTabItemStruct> { notepadTab, genericTab };
-            mainTab.Title = "Favourites";
+        public void AttachTab(Control control)
+        {
+            if(WindowContent.Children.Count > 0)
+            {
+                if (WindowContent.Children[0].GetType() == typeof(NotepadTab))
+                {
+                    ((NotepadTab)WindowContent.Children[0]).detached = false;
+                }
+            }
 
-            NavigationPanel.Children.Add(mainTab);
+            WindowContent.Children.Clear();
+            WindowContent.Children.Add(control);
+        }
 
-            mainTab.UpdateItems();
+        public void DestroyWindow()
+        {
+            if (WindowContent.Children[0].GetType() == typeof(NotepadTab))
+            {
+                ((NotepadTab)WindowContent.Children[0]).detached = false;
+            }
+
+            WindowContent.Children.Clear();
+            this.Close();
+        }
+
+        public Control GetTab()
+        {
+            if (WindowContent.Children.Count <= 0) return null;
+
+            return (Control)WindowContent.Children[0];
         }
 
         #region --- INTERACTION EVENTS ---
@@ -67,7 +91,7 @@ namespace CNC_QOL_App
 
         private void GripBar_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            if(e.ChangedButton == MouseButton.Left)
+            if (e.ChangedButton == MouseButton.Left)
             {
                 Point point = Mouse.GetPosition(this);
                 Point screenPoint = PointToScreen(point);
@@ -83,10 +107,11 @@ namespace CNC_QOL_App
             }
         }
 
-        #region Window_MinMaxClose_BtnActions
+        #region Window_PinMinMaxClose_BtnActions
 
         private void CloseWindow_btn_Click(object sender, RoutedEventArgs e)
         {
+            WindowContent.Children.Clear();
             this.Close();
         }
 
@@ -102,10 +127,11 @@ namespace CNC_QOL_App
 
         private void MaxMinWindow_btn_Click(object sender, RoutedEventArgs e)
         {
-            if(this.WindowState != WindowState.Maximized)
+            if (this.WindowState != WindowState.Maximized)
             {
                 this.WindowState = WindowState.Maximized;
-            } else
+            }
+            else
             {
                 this.WindowState = WindowState.Normal;
             }
@@ -133,21 +159,44 @@ namespace CNC_QOL_App
             minimiseWindow_btn.Background = minimiseWindow_btn_brsh;
         }
 
+        private void PinWindow_btn_Click(object sender, RoutedEventArgs e)
+        {
+            if(this.Topmost == false)
+            {
+                pinWindow_btn_img.Source = new BitmapImage(new Uri("Resources/pin_filled.png", UriKind.Relative));
+                this.Topmost = true;
+            } else
+            {
+                pinWindow_btn_img.Source = new BitmapImage(new Uri("Resources/pin_unfilled.png", UriKind.Relative));
+                this.Topmost = false;
+            }
+        }
+        private void PinWindow_btn_Hover_Enter(object sender, MouseEventArgs e)
+        {
+            pinWindow_btn.Background = pinWindowHover_btn_brsh;
+        }
+
+        private void PinWindow_btn_Hover_Leave(object sender, MouseEventArgs e)
+        {
+            pinWindow_btn.Background = pinWindow_btn_brsh;
+        }
+
         #endregion
 
         #endregion
 
         public void Window_SizeChanged(object sender, SizeChangedEventArgs e)
-        {  
-            if(this.WindowState == WindowState.Maximized)
+        {
+            if (this.WindowState == WindowState.Maximized)
             {
                 this.BorderThickness = new System.Windows.Thickness(6);
-                titleBar_bdr.CornerRadius = new CornerRadius(0, 0, 
+                titleBar_bdr.CornerRadius = new CornerRadius(0, 0,
                     titleBar_bdr.CornerRadius.BottomRight, titleBar_bdr.CornerRadius.BottomLeft);
-            } else
+            }
+            else
             {
                 this.BorderThickness = new System.Windows.Thickness(0);
-                titleBar_bdr.CornerRadius = new CornerRadius(7, 7, 
+                titleBar_bdr.CornerRadius = new CornerRadius(7, 7,
                     titleBar_bdr.CornerRadius.BottomRight, titleBar_bdr.CornerRadius.BottomLeft);
             }
         }

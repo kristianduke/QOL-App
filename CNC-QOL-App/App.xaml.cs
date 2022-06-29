@@ -13,5 +13,19 @@ namespace CNC_QOL_App
     /// </summary>
     public partial class App : Application
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            base.OnStartup(e);
+
+            WindowFrame mainWindow = new WindowFrame();
+            InstanceData.SeperatedWindows.Add(mainWindow);
+
+            MainTab mainTab = new MainTab();
+
+            InstanceData.MainTab = mainTab;
+
+            mainWindow.WindowContent.Children.Add(mainTab);
+            mainWindow.Show();
+        }
     }
 }

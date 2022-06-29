@@ -40,7 +40,14 @@ namespace CNC_QOL_App
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Grid mainTab = (Grid)Application.Current.MainWindow.FindName("TabGrid");
+            if(linkedControl.Parent != null && linkedControl.Parent != this)
+            {
+                ((Grid)linkedControl.Parent).Children.Remove(linkedControl);
+            }
+
+            Grid windowContainer = (Grid)Application.Current.MainWindow.FindName("WindowContent");
+
+            MainTab mainTab = InstanceData.MainTab;
 
             if (!mainTab.Children.Contains(linkedControl) && linkedControl != null)
             {

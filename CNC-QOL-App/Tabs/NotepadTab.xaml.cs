@@ -44,9 +44,9 @@ namespace CNC_QOL_App
                 return;
             }
 
-            SeperatedWindow container = new SeperatedWindow();
-            Grid mainTab = (Grid)Application.Current.MainWindow.FindName("TabGrid");
-            mainTab.Children.Remove(this);
+            WindowFrame container = new WindowFrame();
+            MainTab mainTab = InstanceData.MainTab;
+            mainTab.DetachActiveWindow();
             container.AttachTab(this);
             container.Show();
             detached = true;

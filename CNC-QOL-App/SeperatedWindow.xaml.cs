@@ -49,6 +49,11 @@ namespace CNC_QOL_App
             minimiseWindowHover_btn_brsh = new SolidColorBrush(Color.FromArgb(255, 100, 162, 77));
         }
 
+        public void AttachTab(Control control)
+        {
+            WindowContent.Children.Add(control);
+        }
+
         #region --- INTERACTION EVENTS ---
 
         #region - TITLE BAR EVENTS -
@@ -75,6 +80,7 @@ namespace CNC_QOL_App
 
         private void CloseWindow_btn_Click(object sender, RoutedEventArgs e)
         {
+            WindowContent.Children.Clear();
             this.Close();
         }
 

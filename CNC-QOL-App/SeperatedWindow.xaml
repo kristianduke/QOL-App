@@ -22,7 +22,7 @@
                     </Button>
                 </Grid>
             </Border>
-            <Grid Margin="0,24,0,0">
+            <Grid x:Name="WindowContent" Margin="0,24,0,0">
             </Grid>
         </Grid>
     </Border>

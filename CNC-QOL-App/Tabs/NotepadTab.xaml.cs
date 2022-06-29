@@ -45,6 +45,9 @@ namespace CNC_QOL_App
             }
 
             WindowFrame container = new WindowFrame();
+
+            InstanceData.SeperatedWindows.Add(container);
+
             MainTab mainTab = InstanceData.MainTab;
             mainTab.DetachActiveWindow();
             container.AttachTab(this);

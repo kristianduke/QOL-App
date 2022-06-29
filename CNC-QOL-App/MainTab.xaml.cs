@@ -64,5 +64,10 @@ namespace CNC_QOL_App
         {
             TabGrid.Children.Clear();
         }
+
+        public Grid GetTabGrid()
+        {
+            return TabGrid;
+        }
     }
 }

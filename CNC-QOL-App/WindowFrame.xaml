@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CNC_QOL_App"
         mc:Ignorable="d"
-        Title="Seperated Window" Height="717" Width="1280" ResizeMode="CanResizeWithGrip" WindowStyle="None" Background="{x:Null}" Foreground="{x:Null}" WindowStartupLocation="CenterScreen" AllowsTransparency="True" MinWidth="200" MinHeight="200" SizeChanged="Window_SizeChanged">
+        Title="CNC QOL App" Height="717" Width="1280" ResizeMode="CanResizeWithGrip" WindowStyle="None" Background="{x:Null}" Foreground="{x:Null}" WindowStartupLocation="CenterScreen" AllowsTransparency="True" MinWidth="200" MinHeight="200" SizeChanged="Window_SizeChanged">
     <Border x:Name="windowBorder_bdr" Background="#FF2B2B2B" CornerRadius="10,10,0,10">
         <Grid>
             <Border x:Name="titleBar_bdr" CornerRadius="7,7,0,0" Height="24" VerticalAlignment="Top" Background="#FF474747" MouseDown="GripBar_MouseDown">
@@ -19,6 +19,10 @@
                     <Button x:Name="minimiseWindow_btn" Style="{StaticResource RoundButtonTemplate}" Width="15" Height="15" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,39,0" 
                             Click="MinimiseWindow_btn_Click" MouseEnter="MinimiseWindow_btn_Hover_Enter" MouseLeave="MinimiseWindow_btn_Hover_Leave" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" IsTabStop="False" MinWidth="15" MinHeight="15" Background="#FF29B738">
                         <Image Source="/Resources/subtract_124px.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="1,0,1,0"/>
+                    </Button>
+                    <Button x:Name="pinWindow_btn" Style="{StaticResource RoundButtonTemplate}" Width="15" Height="15" HorizontalAlignment="Right" VerticalAlignment="Center" 
+                        Click="PinWindow_btn_Click" MouseEnter="PinWindow_btn_Hover_Enter" MouseLeave="PinWindow_btn_Hover_Leave" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" IsTabStop="False" MinWidth="15" MinHeight="15" Background="#FFC347E0" Margin="0,0,57,0">
+                        <Image x:Name="pinWindow_btn_img" Source="/Resources/pin_unfilled.png" Stretch="UniformToFill" Margin="1,1,1,1"/>
                     </Button>
                 </Grid>
             </Border>

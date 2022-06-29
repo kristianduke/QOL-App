@@ -29,6 +29,8 @@ namespace CNC_QOL_App
         public Brush maxMinWindowHover_btn_brsh;
         public Brush minimiseWindow_btn_brsh;
         public Brush minimiseWindowHover_btn_brsh;
+        public Brush pinWindow_btn_brsh;
+        public Brush pinWindowHover_btn_brsh;
 
         #endregion
 
@@ -42,20 +44,44 @@ namespace CNC_QOL_App
             closeWindow_btn_brsh = closeWindow_btn.Background;
             maxMinWindow_btn_brsh = maxMinWindow_btn.Background;
             minimiseWindow_btn_brsh = minimiseWindow_btn.Background;
+            pinWindow_btn_brsh = pinWindow_btn.Background;
 
             //Set Colour/Brush Variables for Title Bar Hover
             closeWindowHover_btn_brsh = new SolidColorBrush(Color.FromArgb(255, 224, 66, 66));
             maxMinWindowHover_btn_brsh = new SolidColorBrush(Color.FromArgb(255, 203, 137, 59));
             minimiseWindowHover_btn_brsh = new SolidColorBrush(Color.FromArgb(255, 100, 162, 77));
+            pinWindowHover_btn_brsh = new SolidColorBrush(Color.FromArgb(255, 164, 66, 187));
         }
 
         public void AttachTab(Control control)
         {
+            if(WindowContent.Children.Count > 0)
+            {
+                if (WindowContent.Children[0].GetType() == typeof(NotepadTab))
+                {
+                    ((NotepadTab)WindowContent.Children[0]).detached = false;
+                }
+            }
+
+            WindowContent.Children.Clear();
             WindowContent.Children.Add(control);
+        }
+
+        public void DestroyWindow()
+        {
+            if (WindowContent.Children[0].GetType() == typeof(NotepadTab))
+            {
+                ((NotepadTab)WindowContent.Children[0]).detached = false;
+            }
+
+            WindowContent.Children.Clear();
+            this.Close();
         }
 
         public Control GetTab()
         {
+            if (WindowContent.Children.Count <= 0) return null;
+
             return (Control)WindowContent.Children[0];
         }
 
@@ -81,7 +107,7 @@ namespace CNC_QOL_App
             }
         }
 
-        #region Window_MinMaxClose_BtnActions
+        #region Window_PinMinMaxClose_BtnActions
 
         private void CloseWindow_btn_Click(object sender, RoutedEventArgs e)
         {
@@ -131,6 +157,28 @@ namespace CNC_QOL_App
         private void MinimiseWindow_btn_Hover_Leave(object sender, MouseEventArgs e)
         {
             minimiseWindow_btn.Background = minimiseWindow_btn_brsh;
+        }
+
+        private void PinWindow_btn_Click(object sender, RoutedEventArgs e)
+        {
+            if(this.Topmost == false)
+            {
+                pinWindow_btn_img.Source = new BitmapImage(new Uri("Resources/pin_filled.png", UriKind.Relative));
+                this.Topmost = true;
+            } else
+            {
+                pinWindow_btn_img.Source = new BitmapImage(new Uri("Resources/pin_unfilled.png", UriKind.Relative));
+                this.Topmost = false;
+            }
+        }
+        private void PinWindow_btn_Hover_Enter(object sender, MouseEventArgs e)
+        {
+            pinWindow_btn.Background = pinWindowHover_btn_brsh;
+        }
+
+        private void PinWindow_btn_Hover_Leave(object sender, MouseEventArgs e)
+        {
+            pinWindow_btn.Background = pinWindow_btn_brsh;
         }
 
         #endregion

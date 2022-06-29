@@ -4,11 +4,10 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CNC_QOL_App"
-        mc:Ignorable="d"
-        Height="717" Width="1280" Background="{x:Null}" Foreground="{x:Null}" MinWidth="200" MinHeight="200">
+        mc:Ignorable="d" Background="{x:Null}" Foreground="{x:Null}" MinWidth="1280" MinHeight="720" HorizontalAlignment="Stretch">
     
-    <Border x:Name="windowBorder_bdr">
-        <Grid Margin="0,0,0,0">
+    <Border x:Name="windowBorder_bdr" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+        <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="128*" />
                 <ColumnDefinition Width="15*" />

@@ -4,7 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CNC_QOL_App"
-        mc:Ignorable="d" Background="{x:Null}" Foreground="{x:Null}" MinWidth="1280" MinHeight="720" HorizontalAlignment="Stretch">
+        d:DesignHeight="720" d:DesignWidth="1280"
+        mc:Ignorable="d" Background="{x:Null}" Foreground="{x:Null}" HorizontalAlignment="Stretch">
     
     <Border x:Name="windowBorder_bdr" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
         <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">

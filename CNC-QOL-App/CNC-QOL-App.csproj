@@ -8,6 +8,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\cnc_logo.png" />
+    <None Remove="Resources\cnc_logo_icon.png" />
     <None Remove="Resources\multiply_124px.png" />
     <None Remove="Resources\outline_expand_less_white_48dp.png" />
     <None Remove="Resources\outline_expand_more_white_48dp.png" />
@@ -23,6 +25,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Resources\cnc_logo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\cnc_logo_icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Resources\pin_filled.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>

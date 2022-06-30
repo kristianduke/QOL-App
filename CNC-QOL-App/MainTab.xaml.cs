@@ -42,13 +42,13 @@ namespace CNC_QOL_App
 
             var mainTab = new NavigationPanelTab();
             var notepadTab = new NavigationTabItemStruct("Notepad", new NotepadTab());
+            InstanceData.Tabs.Add(notepadTab.control, typeof(NotepadTab));
             var genericTab = new NavigationTabItemStruct("Test", new GenericTab());
+            InstanceData.Tabs.Add(genericTab.control, typeof(GenericTab));
             mainTab.Items = new List<NavigationTabItemStruct> { notepadTab, genericTab };
-            mainTab.Title = "Favourites";
+            mainTab.Title = "Utilities";
 
             NavigationPanel.Children.Add(mainTab);
-
-            mainTab.UpdateItems();
         }
 
         public void AttachWindow(Control window)

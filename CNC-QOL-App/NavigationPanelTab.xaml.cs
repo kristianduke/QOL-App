@@ -41,6 +41,8 @@ namespace CNC_QOL_App
             InitializeComponent();
             this.DataContext = this;
             navigationImage = (Image)this.FindName("navigationTabIcon");
+
+            CloseTab();
         }
 
         public void UpdateItems()

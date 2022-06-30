@@ -6,14 +6,18 @@
              xmlns:local="clr-namespace:CNC_QOL_App"
              mc:Ignorable="d" 
              d:DesignHeight="720" d:DesignWidth="1280">
-    <Border Background="#FF383838" CornerRadius="5">
+    <Border Background="#FF3C3C3C" CornerRadius="5">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="20"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
             <TextBox Grid.Row="1" Style="{DynamicResource NotepadTextBoxStyle}" TextWrapping="Wrap" Background="{x:Null}" BorderBrush="#FF969696" Foreground="White" SelectionBrush="#FF8B6FAE" Margin="10,0,10,10" FontFamily="Bahnschrift" FontSize="14" AcceptsReturn="True" AcceptsTab="True" Padding="5,5,0,5"/>
-            <Button x:Name="DetachWindow_btn" Style="{StaticResource RoundButtonTemplate}" Background="#FF679BE2" HorizontalAlignment="Right" VerticalAlignment="Center"  MouseEnter="DetachWindow_btn_Hover_Enter" MouseLeave="DetachWindow_btn_Hover_Leave" FontSize="5" FontWeight="Normal" FontFamily="Arial" IsTabStop="False" Click="DetachWindow_btn_Click" Margin="0,0,12,0" Width="15" Height="15"/>
+            <Button x:Name="closeWindow_btn" Style="{StaticResource RoundButtonTemplate}" Width="15" Height="15" Background="#FFF75252" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,12.5,0" 
+                            Click="CloseWindow_btn_Click" MouseEnter="CloseWindow_btn_Hover_Enter" MouseLeave="CloseWindow_btn_Hover_Leave" FontSize="5" FontWeight="Normal" FontFamily="Arial" IsTabStop="False">
+                <Image Source="/Resources/multiply_124px.png" Stretch="Fill" MinWidth="4" MinHeight="5" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="2,2,2,2"/>
+            </Button>
+            <Button x:Name="DetachWindow_btn" Style="{StaticResource RoundButtonTemplate}" Background="#FF679BE2" HorizontalAlignment="Right" VerticalAlignment="Center"  MouseEnter="DetachWindow_btn_Hover_Enter" MouseLeave="DetachWindow_btn_Hover_Leave" FontSize="5" FontWeight="Normal" FontFamily="Arial" IsTabStop="False" Click="DetachWindow_btn_Click" Margin="0,0,30,0" Width="15" Height="15"/>
         </Grid>
     </Border>
 </UserControl>

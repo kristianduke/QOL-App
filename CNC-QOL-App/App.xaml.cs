@@ -17,7 +17,7 @@ namespace CNC_QOL_App
         {
             base.OnStartup(e);
 
-            WindowFrame mainWindow = new WindowFrame();
+            WindowFrame mainWindow = new WindowFrame("CNC Launcher");
             InstanceData.SeperatedWindows.Add(mainWindow);
 
             MainTab mainTab = new MainTab();

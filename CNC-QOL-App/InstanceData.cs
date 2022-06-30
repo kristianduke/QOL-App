@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 
 namespace CNC_QOL_App
 {
@@ -13,5 +14,7 @@ namespace CNC_QOL_App
 
         // List of Main Windows.
         public static List<WindowFrame> SeperatedWindows = new List<WindowFrame>();
+
+        public static Dictionary<UserControl, Type> Tabs = new Dictionary<UserControl, Type>();
     }
 }

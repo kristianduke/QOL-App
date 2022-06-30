@@ -25,6 +25,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Markdown" Version="2.2.1" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Resource Include="Resources\cnc_logo.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>

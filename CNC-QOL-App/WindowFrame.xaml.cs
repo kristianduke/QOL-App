@@ -21,6 +21,8 @@ namespace CNC_QOL_App
     {
         #region --- VARIABLES ---
 
+        public string windowTitle = "";
+
         #region - BRUSHES -
 
         public Brush closeWindow_btn_brsh;
@@ -36,9 +38,11 @@ namespace CNC_QOL_App
 
         #endregion
 
-        public WindowFrame()
+        public WindowFrame(string title)
         {
             InitializeComponent();
+
+            windowTitle = title;
 
             //Get Colour/Brush Variables for Title Bar Buttons
             closeWindow_btn_brsh = closeWindow_btn.Background;
@@ -51,6 +55,9 @@ namespace CNC_QOL_App
             maxMinWindowHover_btn_brsh = new SolidColorBrush(Color.FromArgb(255, 203, 137, 59));
             minimiseWindowHover_btn_brsh = new SolidColorBrush(Color.FromArgb(255, 100, 162, 77));
             pinWindowHover_btn_brsh = new SolidColorBrush(Color.FromArgb(255, 164, 66, 187));
+
+            this.Title = windowTitle;
+            Title_txt.Text = windowTitle;
         }
 
         public void AttachTab(Control control)
@@ -75,6 +82,7 @@ namespace CNC_QOL_App
             }
 
             WindowContent.Children.Clear();
+            InstanceData.SeperatedWindows.Remove(this);
             this.Close();
         }
 

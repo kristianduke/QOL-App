@@ -10,6 +10,9 @@
         <Grid>
             <Border x:Name="titleBar_bdr" CornerRadius="7,7,0,0" Height="24" VerticalAlignment="Top" Background="#FF474747" MouseDown="GripBar_MouseDown">
                 <Grid>
+                    
+                    <TextBlock x:Name="Title_txt" Text="Notepad" HorizontalAlignment="Left" Margin="25,0,0,0" VerticalAlignment="Center" Foreground="White" TextTrimming="CharacterEllipsis" Width="500" />
+                    
                     <Button x:Name="closeWindow_btn" Style="{StaticResource RoundButtonTemplate}" Width="15" Height="15" Background="#FFF75252" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,3,0" 
                             Click="CloseWindow_btn_Click" MouseEnter="CloseWindow_btn_Hover_Enter" MouseLeave="CloseWindow_btn_Hover_Leave" FontSize="5" FontWeight="Normal" FontFamily="Arial" IsTabStop="False">
                         <Image Source="/Resources/multiply_124px.png" Stretch="Fill" MinWidth="4" MinHeight="5" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="2,2,2,2"/>
@@ -26,9 +29,6 @@
                     </Button>
                     
                     <Image Source="/Resources/CNC_LOGO_ICON.png" HorizontalAlignment="Left" VerticalAlignment="Center" Stretch="Uniform" Margin="5,3,0,3" />
-                    
-                    <TextBlock Text="Notepad" HorizontalAlignment="Left" Margin="25,0,0,0" VerticalAlignment="Center" Foreground="White" TextTrimming="CharacterEllipsis" Width="500" />
-                    
 
                 </Grid>
             </Border>

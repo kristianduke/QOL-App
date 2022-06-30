@@ -44,7 +44,7 @@ namespace CNC_QOL_App
                 return;
             }
 
-            WindowFrame container = new WindowFrame();
+            WindowFrame container = new WindowFrame("CNC Notepad");
 
             InstanceData.SeperatedWindows.Add(container);
 
@@ -58,6 +58,25 @@ namespace CNC_QOL_App
 
         }
 
+        #region Window_PinMinMaxClose_BtnActions
+
+        private void CloseWindow_btn_Click(object sender, RoutedEventArgs e)
+        {
+            MainTab mainTab = InstanceData.MainTab;
+            mainTab.DetachActiveWindow();
+        }
+
+        private void CloseWindow_btn_Hover_Enter(object sender, MouseEventArgs e)
+        {
+            closeWindow_btn.Background = closeWindowHover_btn_brsh;
+        }
+
+        private void CloseWindow_btn_Hover_Leave(object sender, MouseEventArgs e)
+        {
+            closeWindow_btn.Background = closeWindow_btn_brsh;
+        }
+
+
         private void DetachWindow_btn_Hover_Enter(object sender, MouseEventArgs e)
         {
             DetachWindow_btn.Background = detachWindowHover_btn_brsh;
@@ -67,6 +86,8 @@ namespace CNC_QOL_App
         {
             DetachWindow_btn.Background = detachWindow_btn_brsh;
         }
+
+        #endregion
 
     }
 }

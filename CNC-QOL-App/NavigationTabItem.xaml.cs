@@ -30,7 +30,7 @@ namespace CNC_QOL_App
         public static readonly DependencyProperty TitleProperty =
             DependencyProperty.Register("Title", typeof(string), typeof(NavigationTabItem), new PropertyMetadata("Tab_Item"));
 
-        public Control linkedControl;
+        public UserControl linkedControl;
 
         public NavigationTabItem()
         {
@@ -53,17 +53,19 @@ namespace CNC_QOL_App
 
             Grid tabGrid = InstanceData.MainTab.GetTabGrid();
 
+            UserControl newWindow = WindowCreator.CreateWindow(linkedControl);
+
             if (!tabGrid.Children.Contains(linkedControl) && linkedControl != null)
             {
-                Grid.SetColumnSpan(linkedControl, 3);
-                Grid.SetRowSpan(linkedControl, 3);
-
-                tabGrid.Children.Add(linkedControl);
+                tabGrid.Children.Add(newWindow);
             } else if(linkedControl != null)
             {
-                Grid.SetColumnSpan(linkedControl, 1);
-                Grid.SetRowSpan(linkedControl, 1);
-                tabGrid.Children.Remove(linkedControl);
+                for(int i = 0; i < tabGrid.Children.Count; i++)
+                {
+                    tabGrid.Children[i] = null;
+                }
+
+                tabGrid.Children.Clear();
             }
         }
     }

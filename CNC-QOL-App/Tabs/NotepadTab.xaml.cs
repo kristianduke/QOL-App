@@ -20,6 +20,8 @@ namespace CNC_QOL_App
     /// </summary>
     public partial class NotepadTab : UserControl
     {
+        public Brush closeWindow_btn_brsh;
+        public Brush closeWindowHover_btn_brsh;
         public Brush detachWindow_btn_brsh;
         public Brush detachWindowHover_btn_brsh;
 
@@ -31,9 +33,11 @@ namespace CNC_QOL_App
 
             //Get Colour/Brush Variables for Title Bar Buttons
             detachWindow_btn_brsh = DetachWindow_btn.Background;
+            closeWindow_btn_brsh = closeWindow_btn.Background;
 
             //Set Colour/Brush Variables for Title Bar Hover
             detachWindowHover_btn_brsh = new SolidColorBrush(Color.FromArgb(255, 63, 110, 175));
+            closeWindowHover_btn_brsh = new SolidColorBrush(Color.FromArgb(255, 224, 66, 66));
         }
 
         private void DetachWindow_btn_Click(object sender, RoutedEventArgs e)

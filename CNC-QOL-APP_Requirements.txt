@@ -1,12 +1,6 @@
 Required Features: [In order of Importance]
 
-Window Seperations, I.E. Being able to seperate notepad from main window.
-
-Window Pinning, Allow for windows to be pinned so that they are always on top.
-
 Notepad Saving, Ability to Save notepad text as txt file.
-
-Notepad Formatting, Allow for bullet points, bold, italic, etc.
 
 Settings Menu + Saving to Application Settings
 

@@ -57,9 +57,20 @@ namespace CNC_QOL_App
             container.AttachTab(this);
             container.Show();
             detached = true;
-            DetachWindow_btn.Visibility = Visibility.Hidden;
+            UpdateTab();
+        }
 
-
+        public void UpdateTab()
+        {
+            if(detached == true)
+            {
+                DetachWindow_btn.Visibility = Visibility.Hidden;
+                closeWindow_btn.Visibility = Visibility.Hidden;
+            } else
+            {
+                DetachWindow_btn.Visibility = Visibility.Visible;
+                closeWindow_btn.Visibility = Visibility.Visible;
+            }
         }
 
         #region Window_PinMinMaxClose_BtnActions

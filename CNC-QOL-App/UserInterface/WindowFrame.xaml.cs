@@ -120,6 +120,7 @@ namespace CNC_QOL_App
         private void CloseWindow_btn_Click(object sender, RoutedEventArgs e)
         {
             WindowContent.Children.Clear();
+           
             this.Close();
         }
 

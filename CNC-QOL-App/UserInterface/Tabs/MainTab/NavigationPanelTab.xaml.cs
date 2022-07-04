@@ -59,14 +59,14 @@ namespace CNC_QOL_App
         public void CloseTab()
         {
             itemStack.Children.Clear();
-            navigationImage.Source = new BitmapImage(new Uri("Resources/outline_expand_more_white_48dp.png", UriKind.Relative));
+            navigationImage.Source = new BitmapImage(new Uri("/Resources/outline_expand_more_white_48dp.png", UriKind.Relative));
             active = false;
         }
 
         public void OpenTab()
         {
             UpdateItems();
-            navigationImage.Source = new BitmapImage(new Uri("Resources/outline_expand_less_white_48dp.png", UriKind.Relative));
+            navigationImage.Source = new BitmapImage(new Uri("/Resources/outline_expand_less_white_48dp.png", UriKind.Relative));
             active = true;
         }
 

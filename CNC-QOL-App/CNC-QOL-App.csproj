@@ -41,12 +41,12 @@
     <Resource Include="Resources\pin_unfilled.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Resources\outline_expand_less_white_48dp.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Resources\outline_expand_more_white_48dp.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
+    <Content Include="Resources\outline_expand_less_white_48dp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\outline_expand_more_white_48dp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Resource Include="Resources\subtract_124px.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>

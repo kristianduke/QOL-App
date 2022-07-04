@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:CNC_QOL_App"
         mc:Ignorable="d"
         Title="CNC QOL App" Height="717" Width="1280" ResizeMode="CanResizeWithGrip" WindowStyle="None" Background="{x:Null}" Foreground="{x:Null}" WindowStartupLocation="CenterScreen" AllowsTransparency="True" MinWidth="200" MinHeight="200" SizeChanged="Window_SizeChanged" Icon="/Resources/CNC_LOGO_ICON.png">
-    <Border x:Name="windowBorder_bdr" Background="#FF2B2B2B" CornerRadius="8,8,0,0">
+    <Border x:Name="windowBorder_bdr" Background="#FF2B2B2B" CornerRadius="8,8,0,8">
         <Grid>
             <Border x:Name="titleBar_bdr" CornerRadius="7,7,0,0" Height="24" VerticalAlignment="Top" Background="#FF474747" MouseDown="GripBar_MouseDown">
                 <Grid>

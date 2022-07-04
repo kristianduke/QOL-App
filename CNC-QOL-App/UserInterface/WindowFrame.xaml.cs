@@ -119,6 +119,12 @@ namespace CNC_QOL_App
 
         private void CloseWindow_btn_Click(object sender, RoutedEventArgs e)
         {
+            //If Window Closed contains main tab, Close Enitre Application.
+            if (GetTab() == InstanceData.MainTab)
+            {
+                Application.Current.Shutdown();
+            }
+
             WindowContent.Children.Clear();
            
             this.Close();

@@ -38,11 +38,21 @@ namespace CNC_QOL_App
 
         #endregion
 
-        public WindowFrame(string title)
+        public WindowFrame(string title, int xSize = 0, int ySize = 0)
         {
             InitializeComponent();
 
             windowTitle = title;
+
+            if(ySize != 0)
+            {
+                Height = ySize;
+            }
+
+            if(xSize != 0)
+            {
+                Width = xSize;
+            }
 
             //Get Colour/Brush Variables for Title Bar Buttons
             closeWindow_btn_brsh = closeWindow_btn.Background;
@@ -66,7 +76,7 @@ namespace CNC_QOL_App
             {
                 if (WindowContent.Children[0].GetType() == typeof(NotepadTab))
                 {
-                    ((NotepadTab)WindowContent.Children[0]).detached = false;
+                    ((TabFrame)WindowContent.Children[0]).detached = false;
                 }
             }
 
@@ -78,7 +88,7 @@ namespace CNC_QOL_App
         {
             if (WindowContent.Children[0].GetType() == typeof(NotepadTab))
             {
-                ((NotepadTab)WindowContent.Children[0]).detached = false;
+                ((TabFrame)WindowContent.Children[0]).detached = false;
             }
 
             WindowContent.Children.Clear();
@@ -178,11 +188,11 @@ namespace CNC_QOL_App
         {
             if(this.Topmost == false)
             {
-                pinWindow_btn_img.Source = new BitmapImage(new Uri("Resources/pin_filled.png", UriKind.Relative));
+                pinWindow_btn_img.Source = new BitmapImage(new Uri("/Resources/pin_filled.png", UriKind.Relative));
                 this.Topmost = true;
             } else
             {
-                pinWindow_btn_img.Source = new BitmapImage(new Uri("Resources/pin_unfilled.png", UriKind.Relative));
+                pinWindow_btn_img.Source = new BitmapImage(new Uri("/Resources/pin_unfilled.png", UriKind.Relative));
                 this.Topmost = false;
             }
         }

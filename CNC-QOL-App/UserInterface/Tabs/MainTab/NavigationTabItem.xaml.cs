@@ -51,21 +51,38 @@ namespace CNC_QOL_App
                 }
             }
 
-            Grid tabGrid = InstanceData.MainTab.GetTabGrid();
-
+            TabFrame tabContainer = new TabFrame(Title);
             UserControl newWindow = WindowCreator.CreateWindow(linkedControl);
 
-            if (!tabGrid.Children.Contains(linkedControl) && linkedControl != null)
-            {
-                tabGrid.Children.Add(newWindow);
-            } else if(linkedControl != null)
-            {
-                for(int i = 0; i < tabGrid.Children.Count; i++)
-                {
-                    tabGrid.Children[i] = null;
-                }
+            tabContainer.CreateTab(newWindow);
 
-                tabGrid.Children.Clear();
+            if (Keyboard.IsKeyDown(Key.LeftCtrl))
+            {
+                WindowFrame container = new WindowFrame(tabContainer.tabName, 250, 400);
+
+                InstanceData.SeperatedWindows.Add(container);
+
+                container.AttachTab(tabContainer);
+                container.Show();
+                tabContainer.detached = true;
+                tabContainer.UpdateTab();
+            } else
+            {
+                Grid tabGrid = InstanceData.MainTab.GetTabGrid();
+
+                if (!tabGrid.Children.Contains(linkedControl) && linkedControl != null)
+                {
+                    tabGrid.Children.Add(tabContainer);
+                }
+                else if (linkedControl != null)
+                {
+                    for (int i = 0; i < tabGrid.Children.Count; i++)
+                    {
+                        tabGrid.Children[i] = null;
+                    }
+
+                    tabGrid.Children.Clear();
+                }
             }
         }
     }

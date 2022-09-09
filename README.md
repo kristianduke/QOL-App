@@ -1,4 +1,4 @@
-# CNC Quality of Life Application
+# General Quality of Life Application
 An application designed to do many things.
 ### Current and Intended Features:
 - [x] Notepad</p>

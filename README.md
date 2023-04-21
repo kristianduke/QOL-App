@@ -1,5 +1,5 @@
 # General Quality of Life Application
-An application designed to do many things.
+A WPF application designed to do many things.
 ### Current and Intended Features:
 - [x] Notepad</p>
 - [ ] Settings Menu</p>
